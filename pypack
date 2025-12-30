@@ -1,0 +1,3 @@
+pip install pandas requests SQLAlchemy pyodbc python-dotenv
+
+## If pyodbc fails → install Microsoft Build Tools or check ODBC driver.
