@@ -1,0 +1,13 @@
+CREATE DATABASE EnergiaEredes;
+GO
+
+CREATE LOGIN EredesUser WITH PASSWORD = 'PasswordStrong_123!';
+GO
+
+USE EnergiaEredes;
+GO
+CREATE USER EredesUser FOR LOGIN EredesUser;
+GO
+
+ALTER ROLE db_owner ADD MEMBER EredesUser;
+GO
