@@ -1,0 +1,36 @@
+# Windows Task Scheduler
+
+Start → Task Scheduler
+  Create Basic Task
+    Name: E-REDES Automatic Data Refresh
+      Trigger: Daily → choose time (Example: 03:00)
+        Action: Start a Program
+          Program: python
+            Arguments: C:\projects\eredes\eredes_ingest.py (example)
+              Start In: C:\projects\eredes (example)
+                Save
+
+# Power BI Connection
+
+Get Data → SQL Server
+  Enter: 
+    Server_ localhost\SQLEXPRESS (or your real server)
+    Database_ EnergiaEredes (or your real database)
+      Connection mode:
+        Import or DirectQuery (depending on your needs)
+
+# Power BI Authentication
+
+  Select:
+    Database Authentication
+    Username: EredesUser
+    Password: PasswordStrong_123!
+
+  Check:
+    Encrypt Connection = Yes
+    Click Connect.
+
+  Then choose tables such as:
+    raw_eredes_national_consumption
+    raw_eredes_substation_load
+    raw_eredes_municipal_consumption
